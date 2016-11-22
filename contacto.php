@@ -91,6 +91,7 @@
 		</div>
 	</section>
 
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15087.361408176488!2d-98.2141006!3d19.0267553!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x73255cce0aee0903!2sOftalmedic!5e0!3m2!1ses-419!2smx!4v1479586871550" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
