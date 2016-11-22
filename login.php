@@ -10,7 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-   <link rel="shortcut icon" href="img/icon.png" /></head>
+   <link rel="shortcut icon" href="img/icon.png" />
+</head>
 <body>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -28,7 +29,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="productos.php">Productos</a></li>
+					<li><a href="catalogo2.php">Productos</a></li>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
@@ -59,68 +60,31 @@
 
 					<div class="panel-body">
 
-						<fieldset >
+						<form action="validarusuario.php" method="post">
 							<div class="form-group">
 							<h5><p class="text-center"></p></h5>
 							</div>
 
 							<div class="form-group">
-								<label for="user">Usuario o Email</label>
-								<input type="text" name="user" id="user" class="form-control" placeholder="juan.perez@hotmail.com">
+								<label for="usuario">Usuario o Email</label>
+								<input type="text" name="usuario" id="usuario" class="form-control" placeholder="juan.perez@hotmail.com" size="15" requiered />
 							</div>
 							<div class="form-group">
-								<label for="pass">Password</label>
-								<input type="password" name="pass" id="pass" class="form-control" placeholder="********">
+								<label for="passwd">Password</label>
+								<input type="password" name="passwd" id="passwd" class="form-control" placeholder="********" size="15" requiered />
 							</div>
 							<div class="form-group">
-								<input type="submit" name="login" id="login" value="Login" class="btn-lg btn-primary btn-block">
+								<input type="submit" name="enviar" id="enviar" value="Enviar" class="btn-lg btn-primary btn-block">
 							</div>
 
 							<span id="result"></span>
 
-						</fieldset>
+						</form>
+						<li><a href="registro.php">Registrarse</a></li>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
