@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <title>Registro</title>
+  <title>Registro de Cliente</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,7 +29,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="productos.php">Productos</a></li>
+					<li><a href="catalogo2.php">Productos</a></li>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
@@ -40,45 +40,53 @@
 							<li><a href="login.php">Log In</a></li>
 							<li><a href="#">Registro</a></li>
 							<li role="separator" class="divider"></li>
-							<li><a href="#">Log out</a></li>
+							<li><a href="index.html">Log out</a></li>
 						</ul>
 					</li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-
+	
+	<h3>Registro de cliente nuevo</h3>
+	
 	<div class="container">
 		<div class="row vertical-offset-100">
 			<div class="col-md-4 col-md-offset-4">
 
 				<div class="panel-body">
-					<form action="#">
+					<form action="registrarse.php" method="post">
+
 						<div class="form-group">
 							<label for="nombre">Nombre*</label>
-							<input class="form-control" type="text" name="nombre" placeholder="Juan Pérez"><br>
+							<input class="form-control" type="text" name="nombre" size="30" maxlength="40" placeholder="Juan Pérez"><br>
 						</div>
 
 
 						<div class="form-group">
 							<label for="tel">Teléfono*</label>
-							<input class="form-control" type="tel" name="tel" placeholder="2224156319"><br>
+							<input class="form-control" type="tel" name="telefono" size="10" maxlength="10" placeholder="2224156319"><br>
 						</div>
 
 						<div class="form-group">
 							<label for="correo">Correo*</label>
-							<input class="form-control" type="email" name="correo" placeholder="juan.perez@hotmail.com"><br>
+							<input class="form-control" type="email" name="email" size="20" maxlength="40" placeholder="juan.perez@hotmail.com"><br>
 
 							<label for="correo">Repetir Correo*</label>
-							<input class="form-control" type="email" name="correo" placeholder="juan.perez@hotmail.com"><br>
+							<input class="form-control" type="email" name="email" size="20" maxlength="40" placeholder="juan.perez@hotmail.com"><br>
 						</div>
 
 						<div class="form-group">
+							<label for="nombre">Usuario*</label>
+							<input class="form-control" type="text" name="username" size="20" maxlength="20" placeholder="JuanP3"><br>
+						</div>
+						
+						<div class="form-group">
 							<label for="pass">Contraseña*</label>
-							<input class="form-control" type="password" name="pass" placeholder="********"><br>
+							<input class="form-control" type="password" name="password" size="10" maxlength="10" placeholder="********"><br>
 
 							<label for="pass">Repetir Contraseña*</label>
-							<input class="form-control" type="password" name="pass" placeholder="********"><br>
+							<input class="form-control" type="password" name="password2" size="10" maxlength="10" placeholder="********"><br>
 						</div>
 
 						<input class="btn btn-primary btn-block" type="submit" value="Registro">

@@ -1,51 +1,31 @@
 <html>
-<head><title>Registro</title></head>
+<head><title>Registro de Cliente</title></head>
 <body>
-<h3>registrarse</h3>
+<h3>Registro de cliente nuevo</h3>
 <?php session_start();
  
    include("conexion.php"); 
    $link=Conectarse(); 
  
-function formRegistro(){
-?>
-<form action="registrarse.php" method="post">
-Usuario (max 20): 
-  <input type="text" name="username" size="20" maxlength="20" /><br /><br />
-Nombre (max 40): 
-  <input type="text" name="nombre" size="30" maxlength="40" /><br /><br />
-Password (max 10): 
-  <input type="password" name="password" size="10" maxlength="10" />
-Confirma: 
-  <input type="password" name="password2" size="10" maxlength="10" /><br /><br />
-Telefono: (max 10): 
-  <input type="text" name="telefono" size="10" maxlength="10" /><br /><br />
-Email (max 30): 
-  <input type="text" name="email" size="20" maxlength="40" /><br /><br />
-<input type="submit" value="Registrar" />
-</form>
-<?php
-}
- 
 // verificamos si se han enviado ya las variables necesarias.
-if (isset($_POST["username"])) {
-    $username = $_POST["username"];
-	$nom = $_POST["nombre"];
-    $password = $_POST["password"];
-    $password2 = $_POST["password2"];
-    $email = $_POST["email"];
-    $tel = $_POST["telefono"];
+if (isset($_REQUEST["username"])) {
+    $username = $_REQUEST["username"];
+    $nom = $_REQUEST["nombre"];
+    $password = $_REQUEST["password"];
+    $password2 = $_REQUEST["password2"];
+    $email = $_REQUEST["email"];
+    $tel = $_REQUEST["telefono"];
     $tipo=1;
     // Hay campos en blanco
     if($username==NULL|$password==NULL|$password2==NULL|$tel==NULL|$email==NULL|$nom==NULL) 
     {
         echo "un campo esta vacio.";
-        formRegistro();
+       header("Location:registro.php");
     }else{
         // ¿Coinciden las contraseñas?
         if($password!=$password2) {
             echo "Las contraseñas no coinciden";
-            formRegistro();
+            header("Location:registro.php");
         }else{
             // Comprobamos si el nombre de usuario o la cuenta de correo ya existian
             $checkuser = mysql_query("SELECT user FROM usuarios WHERE user='$username'");
@@ -56,14 +36,13 @@ if (isset($_POST["username"])) {
     
             if ($email_exist>0|$username_exist>0) {
                 echo "El nombre de usuario o la cuenta de correo estan ya en uso";
-                formRegistro();
+                header("Location:registro.php");
             }else{
                 $query = 'INSERT INTO usuarios (user, password, tipo, nombre, correo, telefono)
                 VALUES (\''.$username.'\',\''.$password.'\',\''.$tipo.'\',\''.$nom.'\',\''.$email.'\',\''.$tel.'\')';
                 
                 mysql_query($query) or die(mysql_error());
-                
-				echo 'El usuario '.$username.' ha sido registrado de manera satisfactoria.<br />';
+                echo 'El usuario '.$username.' ha sido registrado de manera satisfactoria.<br />';
                 echo 'Ahora puede entrar ingresando su usuario y su password <br />';
                 ?>
                 
@@ -73,7 +52,8 @@ if (isset($_POST["username"])) {
         }
     }
 }else{
-    formRegistro();
+    echo '<script language="javascript">alert("no se registro");</script>';
+    header("Location:registro.php");
 }
 ?>
 <li><a href="login.php">Iniciar Sesion</a></li>
