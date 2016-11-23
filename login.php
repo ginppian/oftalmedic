@@ -66,8 +66,8 @@
 							</div>
 
 							<div class="form-group">
-								<label for="usuario">Usuario o Email</label>
-								<input type="text" name="usuario" id="usuario" class="form-control" placeholder="juan.perez@hotmail.com" size="15" requiered />
+								<label for="usuario">Usuario</label>
+								<input type="text" name="usuario" id="usuario" class="form-control" placeholder="juanP3" size="15" requiered />
 							</div>
 							<div class="form-group">
 								<label for="passwd">Password</label>
